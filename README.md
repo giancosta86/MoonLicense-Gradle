@@ -18,6 +18,27 @@
 The plugin is based on its dedicated Java library - [MoonLicense](https://github.com/giancosta86/MoonLicense). Please, refer to its README and to its javadocs for a detailed explanation of the underlying model.
 
 
+## Installation
+
+To add *MoonLicense-Gradle* to your project, just include the following lines:
+
+```
+buildscript {
+    repositories {
+        maven {
+            url "http://dl.bintray.com/giancosta86/Hephaestus"
+        }
+    }
+
+    dependencies {
+        classpath "info.gianlucacosta.moonlicense:moonlicense-gradle:1.0"
+    }
+}
+
+apply plugin: "info.gianlucacosta.moonlicense"
+```
+
+
 ## Basic usage
 
 The basic configuration is as simple as:
