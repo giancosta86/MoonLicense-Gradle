@@ -177,3 +177,11 @@ The following keywords introduce the default notice formats:
 * **xmlFormat** - for XML files
 
 In this case as well, you can define your own formats - for both other languages and custom notice outputs - just by using the API provided by [MoonLicense](https://github.com/giancosta86/MoonLicense).
+
+
+## Special thanks
+
+Special thanks to great tools which I used a lot and which inspired my work:
+
+* [License Maven Plugin](http://mojo.codehaus.org/license-maven-plugin/)
+* [License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin)
