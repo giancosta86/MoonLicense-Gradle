@@ -37,6 +37,13 @@ class MoonLicenseSettings extends LicensedFileSetBlock {
 
     List<LicensedFileSet> fileSets = [];
 
+
+    MoonLicenseSettings() {
+        excludes = [
+            "^build/"
+        ]
+    }
+
     def fileSet(Closure closure) {
         LicensedFileSetDto licensedFileSetDto = new LicensedFileSetDto()
 

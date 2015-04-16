@@ -48,7 +48,6 @@ public class DslTest extends MoonLicenseTestCase {
                     /.*\.xml$/  : xmlFormat
             ]
 
-            excludes = ["^alpha/", "^beta/", /.*\.pyc$/]
 
             skipDotItems = true
 
@@ -88,8 +87,6 @@ public class DslTest extends MoonLicenseTestCase {
                         "^epsilon/": xmlFormat,
                         "^omega/"  : javaFormat
                 ]
-
-                excludes = ["^omicron/"]
             }
 
             skipDotItems = false
@@ -134,9 +131,9 @@ public class DslTest extends MoonLicenseTestCase {
     }
 
 
-    void testExcludes() {
+    void testDefault_ProjectExcludes() {
         assertEquals(
-                ["^alpha/", "^beta/", /.*\.pyc$/],
+                ["^build/"],
 
                 getSettings().excludes
         )
@@ -174,7 +171,7 @@ public class DslTest extends MoonLicenseTestCase {
                                         "^omega/"  : new JavaNoticeFormat()
                                 ],
 
-                                ["^omicron/"]
+                                []
                         )
 
                 ],

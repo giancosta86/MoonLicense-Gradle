@@ -159,7 +159,9 @@ For both **moonLicense** and **fileSet** blocks:
 
   * **xmlFormat** to all files ending with: .xml
 
-* no files are excluded (except *dot items*, but that's due to the dedicated plugin property)
+* **excludes** defaults to:
+  * the *build* subdirectory, in the case of the **moonLicense** block
+  * an empty list, in the case of a *fileSet* block
 
 
 **moonLicense** also has a few more defaults:

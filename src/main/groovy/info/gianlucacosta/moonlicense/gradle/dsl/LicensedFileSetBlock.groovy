@@ -63,7 +63,7 @@ abstract class LicensedFileSetBlock {
             /\.html?$/                                : htmlFormat,
             /\.xml$/                                  : xmlFormat
     ]
-    List<String> excludes = ["^build/"]
+    List<String> excludes = []
 
 
     LicensedFileSet getLicensedFileSet() {
