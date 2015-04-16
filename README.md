@@ -31,7 +31,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "info.gianlucacosta.moonlicense:moonlicense-gradle:2.0"
+        classpath "info.gianlucacosta.moonlicense:moonlicense-gradle:3.0"
     }
 }
 
@@ -97,7 +97,7 @@ This is true, but with one caveat: files and directories beginning with "." (*do
 
 **IMPORTANT**: before being passed to the regular expressions, every path will be made:
 
-* **relative to the project's root directory** - which is why, in the example above, *alpha* and *beta*, whose regexes included the ^ anchor, are first-level directories in the project tree
+* **relative to the project's directory** - which is why, in the example above, *alpha* and *beta*, whose regexes included the ^ anchor, are first-level directories in the project tree
 
 * **platform-independent** - the Unix-style '/' character is used to separate path components, so as to simplify the regular expressions
 

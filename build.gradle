@@ -41,7 +41,7 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group = 'info.gianlucacosta.moonlicense'
 archivesBaseName = 'moonlicense-gradle'
-version = '2.0'
+version = '3.0'
 
 description = 'MoonLicense integration into the Gradle build process'
 

@@ -81,7 +81,7 @@ abstract class NoticesTask extends DefaultTask {
         }
 
 
-        runNoticesOperation(treeNoticeService, project.getRootDir())
+        runNoticesOperation(treeNoticeService, project.projectDir)
 
         if (writtenFiles == 0) {
             getLogger().info("No license notices updated")
@@ -90,7 +90,7 @@ abstract class NoticesTask extends DefaultTask {
         }
     }
 
-    protected abstract void runNoticesOperation(TreeNoticeService treeNoticeService, File projectRootDir);
+    protected abstract void runNoticesOperation(TreeNoticeService treeNoticeService, File projectDir);
 
     protected abstract void updatePom(MoonLicenseSettings settings);
 

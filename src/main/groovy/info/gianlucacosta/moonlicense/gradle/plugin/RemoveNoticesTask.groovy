@@ -51,8 +51,8 @@ class RemoveNoticesTask extends NoticesTask {
     }
 
     @Override
-    protected void runNoticesOperation(TreeNoticeService treeNoticeService, File projectRootDir) {
-        treeNoticeService.removeNotices(projectRootDir);
+    protected void runNoticesOperation(TreeNoticeService treeNoticeService, File projectDir) {
+        treeNoticeService.removeNotices(projectDir);
     }
 
     @Override

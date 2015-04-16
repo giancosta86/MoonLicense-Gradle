@@ -67,8 +67,8 @@ class SetNoticesTask extends NoticesTask {
     }
 
     @Override
-    protected void runNoticesOperation(TreeNoticeService treeNoticeService, File projectRootDir) {
-        treeNoticeService.setNotices(projectRootDir, Year.now().getValue())
+    protected void runNoticesOperation(TreeNoticeService treeNoticeService, File projectDir) {
+        treeNoticeService.setNotices(projectDir, Year.now().getValue())
     }
 
     @Override

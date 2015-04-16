@@ -64,7 +64,7 @@ abstract class TaskTestCase extends MoonLicenseTestCase {
 
         TestTreeService testTreeService = new TestTreeService()
         String treeName = taskName
-        testTreeService.copyInitialTreeToDirectory(treeName, project.getRootDir())
+        testTreeService.copyInitialTreeToDirectory(treeName, project.projectDir)
 
         Task task = project.tasks[taskName]
         task.execute()
@@ -77,17 +77,17 @@ abstract class TaskTestCase extends MoonLicenseTestCase {
             throws IOException {
 
         ProductInfoInjector productInfoInjector = new ProductInfoInjector(project.moonLicense.productInfo);
-        Path projectRootPath = project.getRootDir().toPath()
+        Path projectDirPath = project.projectDir.toPath()
 
         int checkedFiles = 0
 
 
-        Files.walk(projectRootPath).forEach { currentPath ->
+        Files.walk(projectDirPath).forEach { currentPath ->
             if (!currentPath.toFile().isFile()) {
                 return;
             }
 
-            Path relativePath = projectRootPath.relativize(currentPath);
+            Path relativePath = projectDirPath.relativize(currentPath);
 
             String expectedTemplate
             try {
