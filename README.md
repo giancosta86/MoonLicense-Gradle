@@ -26,7 +26,7 @@ To add *MoonLicense-Gradle* to your project, just include the following lines:
 buildscript {
     repositories {
         maven {
-            url "http://dl.bintray.com/giancosta86/Hephaestus"
+            url "https://dl.bintray.com/giancosta86/Hephaestus"
         }
     }
 
