@@ -48,7 +48,7 @@ class MoonLicenseSettings extends LicensedFileSetBlock {
         LicensedFileSetDto licensedFileSetDto = new LicensedFileSetDto()
 
         closure.delegate = licensedFileSetDto
-        closure.resolveStrategy = Closure.DELEGATE_ONLY
+        closure.resolveStrategy = Closure.DELEGATE_FIRST
         closure()
 
         LicensedFileSet licensedFileSet = licensedFileSetDto.getLicensedFileSet()

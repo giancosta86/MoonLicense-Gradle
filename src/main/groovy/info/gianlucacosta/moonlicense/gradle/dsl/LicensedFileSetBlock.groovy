@@ -50,7 +50,7 @@ abstract class LicensedFileSetBlock {
     def productInfo(Closure closure) {
         ProductInfoDto productInfoDto = new ProductInfoDto()
         closure.delegate = productInfoDto
-        closure.resolveStrategy = Closure.DELEGATE_ONLY
+        closure.resolveStrategy = Closure.DELEGATE_FIRST
         closure()
 
         productInfo = productInfoDto.getProductInfo()
