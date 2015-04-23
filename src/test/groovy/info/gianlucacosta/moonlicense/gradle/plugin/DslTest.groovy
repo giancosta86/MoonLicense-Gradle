@@ -202,4 +202,13 @@ public class DslTest extends MoonLicenseTestCase {
                 getSettings().updatePom
         )
     }
+
+
+    void testGetCopyrightYears_forMoonLicenseBlock() {
+        assertEquals(
+                "2014-2015",
+
+                project.moonLicense.getCopyrightYears(2015)
+        )
+    }
 }

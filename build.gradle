@@ -41,9 +41,20 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group = 'info.gianlucacosta.moonlicense'
 archivesBaseName = 'moonlicense-gradle'
-version = '3.0'
+version = '3.1'
 
 description = 'MoonLicense integration into the Gradle build process'
+
+
+
+dependencies {
+    compile gradleApi()
+
+    compile localGroovy()
+
+    compile 'info.gianlucacosta.moonlicense:moonlicense:1.2'
+}
+
 
 
 aurora {
@@ -75,12 +86,4 @@ moonLicense {
         inceptionYear = 2015
         copyrightHolder = 'Gianluca Costa'
     }
-}
-
-dependencies {
-    compile gradleApi()
-
-    compile localGroovy()
-
-    compile group: 'info.gianlucacosta.moonlicense', name: 'moonlicense', version: '1.1'
 }

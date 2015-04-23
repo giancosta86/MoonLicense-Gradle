@@ -20,10 +20,7 @@
 
 package info.gianlucacosta.moonlicense.gradle.dsl
 
-import info.gianlucacosta.moonlicense.License
-import info.gianlucacosta.moonlicense.LicensedFileSet
-import info.gianlucacosta.moonlicense.NoticeFormat
-import info.gianlucacosta.moonlicense.ProductInfo
+import info.gianlucacosta.moonlicense.*
 import info.gianlucacosta.moonlicense.licenses.agpl3.Agpl3
 import info.gianlucacosta.moonlicense.licenses.apache2.Apache2
 import info.gianlucacosta.moonlicense.licenses.bsd2.Bsd2
@@ -35,6 +32,8 @@ import info.gianlucacosta.moonlicense.noticeformats.HtmlNoticeFormat
 import info.gianlucacosta.moonlicense.noticeformats.JavaNoticeFormat
 import info.gianlucacosta.moonlicense.noticeformats.PascalNoticeFormat
 import info.gianlucacosta.moonlicense.noticeformats.XmlNoticeFormat
+
+import java.time.Year
 
 /**
  * Exposes information about a LicensedFileSet to the DSL.
@@ -59,15 +58,28 @@ abstract class LicensedFileSetBlock {
 
     Map<String, NoticeFormat> includes = [
             /\.(java|scala|groovy|gradle|c|h|cs|cpp|js)$/: javaFormat,
-            /\.(pas|mli?)$/                           : pascalFormat,
-            /\.html?$/                                : htmlFormat,
-            /\.xml$/                                  : xmlFormat
+            /\.(pas|mli?)$/                              : pascalFormat,
+            /\.html?$/                                   : htmlFormat,
+            /\.xml$/                                     : xmlFormat
     ]
     List<String> excludes = []
 
 
     LicensedFileSet getLicensedFileSet() {
         return new LicensedFileSet(license, productInfo, includes, excludes);
+    }
+
+
+    String getCopyrightYears() {
+        return getCopyrightYears(Year.now().getValue())
+    }
+
+
+    String getCopyrightYears(int currentYear) {
+        return new CopyrightYearsBuilder()
+                .setInceptionYear(productInfo.inceptionYear)
+                .setCurrentYear(currentYear)
+                .toString()
     }
 
 

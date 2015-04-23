@@ -40,7 +40,7 @@ class MoonLicenseSettings extends LicensedFileSetBlock {
 
     MoonLicenseSettings() {
         excludes = [
-            "^build/"
+                "^build/"
         ]
     }
 
