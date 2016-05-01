@@ -31,7 +31,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "info.gianlucacosta.moonlicense:moonlicense-gradle:3.0"
+        classpath "info.gianlucacosta.moonlicense:moonlicense-gradle:LATEST_VERSION"
     }
 }
 
