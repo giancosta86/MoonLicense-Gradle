@@ -29,8 +29,8 @@ buildscript {
 
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
-        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.0'
-        classpath 'info.gianlucacosta.aurora:aurora:4.1'
+        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.1'
+        classpath 'info.gianlucacosta.aurora:aurora:5.1'
     }
 }
 
@@ -44,7 +44,7 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group = 'info.gianlucacosta.moonlicense'
 archivesBaseName = 'moonlicense-gradle'
-version = '4.1'
+version = '4.2'
 
 description = 'MoonLicense integration into the Gradle build process'
 
@@ -56,7 +56,18 @@ dependencies {
 
     compile localGroovy()
 
-    compile 'info.gianlucacosta.moonlicense:moonlicense:2.1'
+    compile 'info.gianlucacosta.moonlicense:moonlicense:2.2'
+}
+
+
+moonLicense {
+    license = apache2
+
+    productInfo {
+        productName = 'MoonLicense - Gradle'
+        inceptionYear = 2015
+        copyrightHolder = 'Gianluca Costa'
+    }
 }
 
 
@@ -73,16 +84,5 @@ aurora {
         repo = 'Hephaestus'
         licenses = ['Apache-2.0']
         labels = ['licenses', 'notices', 'Gradle', 'plugin', 'extensible']
-    }
-}
-
-
-moonLicense {
-    license = apache2
-
-    productInfo {
-        productName = 'MoonLicense - Gradle'
-        inceptionYear = 2015
-        copyrightHolder = 'Gianluca Costa'
     }
 }
