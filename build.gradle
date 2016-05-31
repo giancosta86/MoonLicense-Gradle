@@ -52,9 +52,11 @@ ext.facebookPage = "https://www.facebook.com/moonlicense"
 
 
 dependencies {
-    compile gradleApi()
+    generatedCompile localGroovy()
 
     compile localGroovy()
+
+    compile gradleApi()
 
     compile 'info.gianlucacosta.moonlicense:moonlicense:2.2'
 }
