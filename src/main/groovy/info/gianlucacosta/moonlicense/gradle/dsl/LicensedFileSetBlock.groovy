@@ -57,10 +57,10 @@ abstract class LicensedFileSetBlock {
 
 
     Map<String, NoticeFormat> includes = [
-            /\.(java|scala|groovy|gradle|c|h|cs|cpp|js)$/: javaFormat,
-            /\.(pas|mli?)$/                              : pascalFormat,
-            /\.html?$/                                   : htmlFormat,
-            /\.xml$/                                     : xmlFormat
+            /\.(java|scala|groovy|gradle|c|h|cs|cpp|js|css|go)$/: javaFormat,
+            /\.(pas|mli?)$/                                     : pascalFormat,
+            /\.html?$/                                          : htmlFormat,
+            /\.(xml|fxml)$/                                     : xmlFormat
     ]
     List<String> excludes = []
 
